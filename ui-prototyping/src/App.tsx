@@ -14,7 +14,7 @@ export default function App() {
   return (
     <MantineProvider theme={theme}>
       <Notifications />
-      <Router>
+      <Router basename="/vibe-starter">
         <MainLayout>
           <Routes>
             <Route path="/" element={<HomePage />} />

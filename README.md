@@ -4,6 +4,8 @@ Welcome to the **Vibe Coding Starter Kit** – your streamlined launchpad for bu
 
 This toolkit is built for fast iteration, good vibes, and clean code.
 
+Demo : https://philbir.github.io/vibe-starter/
+
 ---
 
 ## ✨ Features
@@ -23,7 +25,6 @@ This toolkit is built for fast iteration, good vibes, and clean code.
 npm run dev
 ```
 This will spin up the UI at `http://localhost:5176/`.
-
 
 
 ## 🔖 License
