@@ -22,6 +22,7 @@ Demo : https://philbir.github.io/vibe-starter/
 ### 1. Start the Dev Server
 
 ```bash
+cd ui-prototyping
 npm run dev
 ```
 This will spin up the UI at `http://localhost:5176/`.
