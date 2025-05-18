@@ -20,10 +20,12 @@ function useWindowSizeConfetti() {
 import { IconCheck } from '@tabler/icons-react';
 
 export function ContactPage() {
+  // Always call hooks at the top level!
   const [loading, setLoading] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [submittedValues, setSubmittedValues] = useState<{ name: string } | null>(null);
-  
+  const { width, height } = useWindowSizeConfetti();
+
   const form = useForm({
     initialValues: {
       name: '',
@@ -42,7 +44,6 @@ export function ContactPage() {
     try {
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1000));
-      
       setSubmittedValues({ name: values.name });
       setIsSubmitted(true);
       form.reset();
@@ -62,10 +63,8 @@ export function ContactPage() {
     setSubmittedValues(null);
   };
 
-
   if (isSubmitted && submittedValues) {
-    // Responsive confetti using custom hook
-    const { width, height } = useWindowSizeConfetti();
+    // Responsive confetti using custom hook (values always available)
     return (
       <Container>
         {/* Confetti celebration! */}
@@ -92,7 +91,6 @@ export function ContactPage() {
     <Container>
       <Title order={1}>Contact</Title>
       <Text mt="md" mb="lg">Get in touch with us.</Text>
-      
       <Paper shadow="sm" p="xl" withBorder>
         <form onSubmit={form.onSubmit(handleSubmit)}>
           <TextInput
@@ -102,7 +100,6 @@ export function ContactPage() {
             mb="md"
             {...form.getInputProps('name')}
           />
-          
           <TextInput
             label="Email"
             placeholder="Your email"
@@ -111,7 +108,6 @@ export function ContactPage() {
             type="email"
             {...form.getInputProps('email')}
           />
-          
           <Textarea
             label="Message"
             placeholder="Your message"
@@ -120,7 +116,6 @@ export function ContactPage() {
             mb="xl"
             {...form.getInputProps('message')}
           />
-          
           <Group justify="flex-end">
             <Button type="submit" loading={loading}>Send Message</Button>
           </Group>
