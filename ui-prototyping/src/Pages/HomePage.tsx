@@ -6,7 +6,8 @@ import {
   IconBrandVscode, 
   IconPointer, 
   IconCode,
-  IconServer
+  IconServer,
+  IconBrandGithub
 } from '@tabler/icons-react';
 import { Link } from "react-router-dom";
 
@@ -15,6 +16,14 @@ export function HomePage() {
     <Container fluid>
       <Title order={1}>Vibe Starter Kit 🚀</Title>
       <Text mt="md" size="lg">Use this to start your Vibe coding journey ✨</Text>
+      <Group align="center" gap="xs" mt="md">
+        <ThemeIcon color="dark" size={32} radius="xl">
+          <IconBrandGithub size={20} />
+        </ThemeIcon>
+        <Text component="a" href="https://github.com/philbir/vibe-starter" target="_blank" rel="noopener noreferrer" fw={500} c="dark.7" style={{ textDecoration: 'none' }}>
+          github.com/philbir/vibe-starter
+        </Text>
+      </Group>
       
       <Card shadow="sm" radius="md" withBorder mt="xl" p="xl">
         <Title order={2} mb="md">Components Used 🛠️</Title>
@@ -104,9 +113,6 @@ export function HomePage() {
           <List spacing="sm">
             <List.Item>Cursor rules provided</List.Item>
           </List>
-          <Text mt="md" size="sm" fs="italic">
-            Remember to run <Code>npm run lint</Code> before commits
-          </Text>
         </Card>
       </SimpleGrid>
 
