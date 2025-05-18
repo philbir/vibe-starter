@@ -1,12 +1,9 @@
 
-name: Deploy static content to Pages
-
+name: Deploy App to GitHub pages
 
 on:
   push:
-    tags:
-      - '*.*.*'
-
+    branches: ["main"]
   workflow_dispatch:
 
 permissions:
